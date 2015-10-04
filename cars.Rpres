@@ -1,0 +1,38 @@
+Speed and Stopping Distance of Cars
+========================================================
+author: Ken Chen
+date: 
+
+Background
+========================================================
+
+Many of the car accidents are caused by speeding.
+
+Even if you don't speed, when you see obstacle ahead, you must have enough time or distance to stop the car to prevent crash.
+
+Observation
+========================================================
+
+Scientists have done some experiment to obtain some figures about the speed and stopping distance it requires in 1920s.
+
+```{r}
+summary(cars)
+```
+
+Speed vs Stopping Distance
+========================================================
+```{r, echo=FALSE}
+# plot(cars)
+library(ggplot2)
+qplot(speed, dist, data = cars, geom = c('point', 'smooth'), method = 'lm')
+```
+
+Prediction Website
+========================================================
+
+As we can see, we can basically fit the relationship between speed and stopping distance in a linear regression model.
+
+We have made a web site to help you to know the stopping distance for the normal speed you drive.
+Please check out under: 
+
+<https://thinkingincrowd.shinyapps.io/cars>
